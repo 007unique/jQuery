@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title> PIE CHART </title>
+
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script> 
+
+<script>
+
+window.onload = function() {
+
+    var option = {
+        animationEnabled : true,
+        title : {
+            text: "IPL WHEEL",
+            fontSize : 25
+        },
+        axisY : {
+
+            title : "TEAMS"
+        },
+        legend : {
+            // verticalAlign: "center",            
+            // horizontalAlign: "right" 
+            verticalAlign: "bottom",            
+            horizontalAlign: "center"            
+        },
+        data : [ {
+
+            type : "pie",
+            showInLegend:true,
+            toolTipContent : "{legend}  {y} %", 
+            indexLabel : "{y} %", 
+            dataPoints: [
+                {label:"RCB" , y : 20, legendText : "RCB"},
+                {label:"DC" , y : 30, legendText : "DC"},
+                {label:"KKR" , y : 5, legendText : "KKR"},
+                {label:"SRH" , y : 10, legendText : "SRH"},
+                {label:"MI" , y : 35, legendText : "MI"},
+                {label:"CSK" , y : 40, legendText : "CSK"},
+                {label:"RR" , y : 25, legendText : "RR"}
+            ]
+
+        }]
+
+    };
+
+    $("#ipl").CanvasJSChart(option);
+
+
+}
+
+</script>
+
+</head>
+<body>
+
+<div id="ipl" style="width:100%;height:100%"> </div>
+
+
+</body>
+</html>
